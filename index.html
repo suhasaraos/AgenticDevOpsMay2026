@@ -26,7 +26,7 @@
   <div class="title-slide">
     <div class="eyebrow">Agentic DevOps · May 2026</div>
     <img src="assets/ai-cloud.svg" class="title-ai-logo" alt="AI" />
-    <h1>The Evolution of the Developer</h1>
+    <h1 id="param-title">The Evolution of the Developer</h1>
     <p class="tagline">From code writer to orchestrator of intelligent systems</p>
     <div style="margin-top:2em; display:flex; justify-content:center; gap:1.5em;">
       <span class="era-badge era-2005">2005</span>
@@ -34,6 +34,7 @@
       <span class="era-badge era-2020">2018–2023</span>
       <span class="era-badge era-2026">2024+</span>
     </div>
+    <div id="param-presenter" class="presenter-meta"></div>
   </div>
   <aside class="notes">
     <strong>Definition of Agentic DevOps:</strong> AI-powered agents integrated into development and operations teams to automate, optimise, and accelerate every stage of the software lifecycle.<br><br>
@@ -1193,6 +1194,26 @@
 </div><!-- .slides -->
 </div><!-- .reveal -->
 
+<script>
+  // Populate title slide from URL params: ?title=...&author=...&company=...
+  (function () {
+    var p = new URLSearchParams(window.location.search);
+    var title   = p.get('title');
+    var author  = p.get('author');
+    var company = p.get('company');
+
+    if (title) {
+      document.getElementById('param-title').textContent = decodeURIComponent(title);
+    }
+
+    var parts = [];
+    if (author)  parts.push('<span class="pm-author">'  + decodeURIComponent(author)  + '</span>');
+    if (company) parts.push('<span class="pm-company">' + decodeURIComponent(company) + '</span>');
+    if (parts.length) {
+      document.getElementById('param-presenter').innerHTML = parts.join('<span class="pm-sep">·</span>');
+    }
+  })();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>

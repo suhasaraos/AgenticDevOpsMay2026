@@ -456,3 +456,20 @@
   display: block;
   filter: drop-shadow(0 0 12px rgba(56,139,253,0.5));
 }
+
+/* =============================================
+   PRESENTER META (URL param injection)
+   ============================================= */
+.presenter-meta {
+  margin-top: 1.2em;
+  font-size: 0.6em;
+  color: var(--gh-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 1.4em;
+}
+.pm-author  { color: var(--gh-text); font-weight: 600; }
+.pm-company { color: var(--gh-blue); }
+.pm-sep     { color: var(--gh-border); }
