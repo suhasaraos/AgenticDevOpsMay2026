@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic DevOps - May 2026</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/black.css" />
+  <link rel="stylesheet" href="assets/custom.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================
+     PART 1 - THE EVOLUTION STORY
+     ============================================================ -->
+
+<!-- S1: TITLE -->
+<section class="center-slide" data-background-color="#0d1117">
+  <div class="title-slide">
+    <div class="eyebrow">Agentic DevOps · May 2026</div>
+    <h1>The Evolution of the Developer</h1>
+    <p class="tagline">From code writer to orchestrator of intelligent systems</p>
+    <div style="margin-top:2em; display:flex; justify-content:center; gap:1.5em;">
+      <span class="era-badge era-2005">2005</span>
+      <span class="era-badge era-2015">2012–2018</span>
+      <span class="era-badge era-2020">2018–2023</span>
+      <span class="era-badge era-2026">2024+</span>
+    </div>
+  </div>
+  <aside class="notes">
+    <strong>Definition of Agentic DevOps:</strong> AI-powered agents integrated into development and operations teams to automate, optimise, and accelerate every stage of the software lifecycle.<br><br>
+    <strong>Concept vs Product:</strong> Agentic DevOps is a concept, not a product. Microsoft offers the runtime (GitHub Copilot) and agentic platforms (GitHub Enterprise and Azure).<br><br>
+    Start by asking: how are customers currently using agents in their software lifecycle? If they use none, introduce GitHub Copilot, which includes agentic features since mid-2025.
+  </aside>
+</section>
+
+<!-- S2: TIMELINE -->
+<section data-background-color="#0d1117">
+  <h2>The Developer Journey</h2>
+  <p class="text-muted" style="font-size:0.75em;">Two decades of expanding responsibility - from function to system</p>
+  <div class="timeline">
+    <div class="timeline-node">
+      <div class="year">~2005</div>
+      <div class="label">The Code Writer</div>
+    </div>
+    <div class="timeline-node">
+      <div class="year">2012–18</div>
+      <div class="label">Full-Stack +<br>DevOps-Aware</div>
+    </div>
+    <div class="timeline-node">
+      <div class="year">2018–23</div>
+      <div class="label">SRE-Influenced</div>
+    </div>
+    <div class="timeline-node">
+      <div class="year">2024+</div>
+      <div class="label">The Agentic<br>Developer</div>
+    </div>
+  </div>
+  <div class="grid-4 mt-2" style="margin-top:2em;">
+    <div class="card accent-blue" style="font-size:0.72em;">
+      <div class="bold text-blue">Primary skill</div>Coding
+      <div class="text-muted mt-1">Core value: Implementation</div>
+    </div>
+    <div class="card accent-green" style="font-size:0.72em;">
+      <div class="bold text-green">Primary skill</div>DevOps
+      <div class="text-muted mt-1">Core value: Delivery</div>
+    </div>
+    <div class="card accent-amber" style="font-size:0.72em;">
+      <div class="bold text-amber">Primary skill</div>SRE
+      <div class="text-muted mt-1">Core value: Reliability</div>
+    </div>
+    <div class="card accent-red" style="font-size:0.72em;">
+      <div class="bold text-red">Primary skill</div>Agentic
+      <div class="text-muted mt-1">Core value: Judgment + Orchestration</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ERA 1: ~2005 -->
+<!-- ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <section>
+    <span class="era-badge era-2005">~2005</span>
+    <h2>The Code Writer</h2>
+    <div class="grid-3 mt-1">
+      <div class="card accent-blue">
+        <h3 class="text-blue" style="font-size:0.85em;">What the role looked like</h3>
+        <ul>
+          <li>Work assigned as small functional units</li>
+          <li>Write code → hand off</li>
+          <li>Limited visibility beyond own module</li>
+        </ul>
+      </div>
+      <div class="card accent-blue">
+        <h3 class="text-blue" style="font-size:0.85em;">Responsibilities</h3>
+        <ul>
+          <li>Implement business logic</li>
+          <li>Fix bugs in assigned area</li>
+          <li>Write minimal unit tests</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--gh-border);">
+        <h3 class="text-muted" style="font-size:0.85em;">What they did NOT do</h3>
+        <ul style="color: var(--gh-muted);">
+          <li style="color:var(--gh-muted);">No deployment responsibility</li>
+          <li style="color:var(--gh-muted);">No infra awareness</li>
+          <li style="color:var(--gh-muted);">No production ownership</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="era-badge era-2005">~2005 · Example</span>
+    <h2>"Build a login module"</h2>
+    <div class="card accent-blue mt-2" style="max-width:520px; margin: 1.2em auto;">
+      <p class="text-muted" style="font-size:0.72em; margin-bottom:0.6em;">Developer would:</p>
+      <ul>
+        <li class="fragment">Write authentication logic</li>
+        <li class="fragment">Maybe connect to DB</li>
+        <li class="fragment">Hand off to QA</li>
+      </ul>
+      <div class="fragment" style="margin-top:1em; padding-top:0.8em; border-top:1px solid var(--gh-border); text-align:center;">
+        <span class="era-badge era-2005" style="font-size:0.8em;">👉 Focus: code correctness</span>
+      </div>
+    </div>
+    <p class="text-muted text-center fragment" style="font-size:0.7em; margin-top:1em;">That's it. QA, deployment, production - someone else's problem.</p>
+  </section>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- ERA 2: 2012–2018 -->
+<!-- ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <section>
+    <span class="era-badge era-2015">2012–2018</span>
+    <h2>Full-Stack + DevOps-Aware</h2>
+    <div class="card" style="border-left: 3px solid var(--era-2015); padding: 0.8em 1.2em; margin-bottom:1em; font-size:0.8em;">
+      <span class="text-green bold">This is where DevOps culture hit.</span>
+    </div>
+    <div class="grid-2 mt-1">
+      <div class="card accent-green">
+        <h3 class="text-green" style="font-size:0.85em;">What changed</h3>
+        <ul>
+          <li>CI/CD pipelines introduced</li>
+          <li>Cloud started becoming mainstream</li>
+          <li>"You build it, you run it" mindset</li>
+        </ul>
+      </div>
+      <div class="card accent-green">
+        <h3 class="text-green" style="font-size:0.85em;">New responsibilities</h3>
+        <ul>
+          <li>Write code + deploy it</li>
+          <li>Understand pipelines (builds, releases)</li>
+          <li>Handle basic infra configs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="era-badge era-2015">2012–2018 · Example</span>
+    <h2>"Build and deploy the login service"</h2>
+    <div class="card accent-green mt-2" style="max-width:540px; margin: 1.2em auto;">
+      <p class="text-muted" style="font-size:0.72em; margin-bottom:0.6em;">Developer would:</p>
+      <ul>
+        <li class="fragment">Write the API</li>
+        <li class="fragment">Create a CI pipeline</li>
+        <li class="fragment">Deploy to cloud (VM / early PaaS)</li>
+        <li class="fragment">Debug deployment issues</li>
+      </ul>
+      <div class="fragment" style="margin-top:1em; padding-top:0.8em; border-top:1px solid var(--gh-border); text-align:center;">
+        <span class="era-badge era-2015" style="font-size:0.8em;">👉 Focus: delivery + deployment</span>
+      </div>
+    </div>
+    <p class="text-muted text-center fragment" style="font-size:0.7em; margin-top:1em;">Ownership expanded beyond code for the first time.</p>
+  </section>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- ERA 3: 2018–2023 -->
+<!-- ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <section>
+    <span class="era-badge era-2020">2018–2023</span>
+    <h2>SRE-Influenced Developer</h2>
+    <div class="card" style="border-left: 3px solid var(--era-2020); padding: 0.8em 1.2em; margin-bottom:1em; font-size:0.8em;">
+      <span class="text-amber bold">Reliability became first-class.</span>
+    </div>
+    <div class="grid-3 mt-1">
+      <div class="card accent-amber">
+        <h3 class="text-amber" style="font-size:0.85em;">What changed</h3>
+        <ul>
+          <li>Microservices exploded</li>
+          <li>Distributed systems complexity</li>
+          <li>Observability became critical</li>
+        </ul>
+      </div>
+      <div class="card accent-amber">
+        <h3 class="text-amber" style="font-size:0.85em;">New responsibilities</h3>
+        <ul>
+          <li>Monitoring + alerting</li>
+          <li>Performance tuning</li>
+          <li>Incident response</li>
+        </ul>
+      </div>
+      <div class="card accent-amber">
+        <h3 class="text-amber" style="font-size:0.85em;">New concepts</h3>
+        <ul>
+          <li>SLIs / SLOs</li>
+          <li>Error budgets</li>
+          <li>Resilience engineering</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="era-badge era-2020">2018–2023 · Example</span>
+    <h2>"Own the login service in production"</h2>
+    <div class="card accent-amber mt-2" style="max-width:540px; margin: 1.2em auto;">
+      <p class="text-muted" style="font-size:0.72em; margin-bottom:0.6em;">Developer would:</p>
+      <ul>
+        <li class="fragment">Add logging + metrics</li>
+        <li class="fragment">Set up alerts</li>
+        <li class="fragment">Respond to outages</li>
+        <li class="fragment">Improve latency + reliability</li>
+      </ul>
+      <div class="fragment" style="margin-top:1em; padding-top:0.8em; border-top:1px solid var(--gh-border); text-align:center;">
+        <span class="era-badge era-2020" style="font-size:0.8em;">👉 Focus: reliability + production health</span>
+      </div>
+    </div>
+    <p class="text-muted text-center fragment" style="font-size:0.7em; margin-top:1em;">Now they own production health end-to-end.</p>
+  </section>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- ERA 4: 2024+ -->
+<!-- ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <section>
+    <span class="era-badge era-2026">2024+</span>
+    <h2>The Agentic Developer</h2>
+    <div class="card" style="border-left: 3px solid var(--era-2026); padding: 0.8em 1.2em; margin-bottom:1em; font-size:0.8em;">
+      <span class="text-red bold">This is where GitHub Copilot changes the game.</span>
+    </div>
+    <div class="grid-2 mt-1">
+      <div class="card accent-red">
+        <h3 class="text-red" style="font-size:0.85em;">What's fundamentally different</h3>
+        <ul>
+          <li>Developers are no longer the primary code generators</li>
+          <li>They are <span class="bold text-red">orchestrators of intelligent systems</span></li>
+          <li>AI agents handle generation, testing, and iteration</li>
+        </ul>
+      </div>
+      <div class="card accent-red">
+        <h3 class="text-red" style="font-size:0.85em;">The modern role</h3>
+        <p class="text-muted" style="font-size:0.8em;">Developer as <span class="bold text-red">system designer + agent orchestrator</span></p>
+        <ul style="margin-top:0.6em;">
+          <li>Define intent</li>
+          <li>Guide AI agents</li>
+          <li>Review and validate outputs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="era-badge era-2026">2024+ · Core Responsibilities</span>
+    <h2>What developers do now</h2>
+    <div class="grid-3 mt-2" style="gap:0.9em;">
+      <div class="card accent-red fragment">
+        <div style="font-size:1.5em; margin-bottom:0.3em;">🎯</div>
+        <h3 style="font-size:0.85em; color:var(--era-2026);">Define intent</h3>
+        <p class="text-muted" style="font-size:0.75em;">Express what needs to be built in natural language; shape requirements and constraints</p>
+      </div>
+      <div class="card accent-red fragment">
+        <div style="font-size:1.5em; margin-bottom:0.3em;">🤖</div>
+        <h3 style="font-size:0.85em; color:var(--era-2026);">Guide agents</h3>
+        <p class="text-muted" style="font-size:0.75em;">Steer Copilot and custom agents; provide feedback and course-correct</p>
+      </div>
+      <div class="card accent-red fragment">
+        <div style="font-size:1.5em; margin-bottom:0.3em;">🔍</div>
+        <h3 style="font-size:0.85em; color:var(--era-2026);">Review + validate</h3>
+        <p class="text-muted" style="font-size:0.75em;">Ensure correctness, security, edge cases - regardless of who generated the code</p>
+      </div>
+      <div class="card accent-red fragment">
+        <div style="font-size:1.5em; margin-bottom:0.3em;">🏗️</div>
+        <h3 style="font-size:0.85em; color:var(--era-2026);">Design systems</h3>
+        <p class="text-muted" style="font-size:0.75em;">Architecture decisions, constraints, and system thinking remain deeply human</p>
+      </div>
+      <div class="card accent-red fragment">
+        <div style="font-size:1.5em; margin-bottom:0.3em;">🛡️</div>
+        <h3 style="font-size:0.85em; color:var(--era-2026);">Ensure quality</h3>
+        <p class="text-muted" style="font-size:0.75em;">Security, reliability, and correctness at scale - accountability stays with the developer</p>
+      </div>
+      <div class="card accent-red fragment">
+        <div style="font-size:1.5em; margin-bottom:0.3em;">⚡</div>
+        <h3 style="font-size:0.85em; color:var(--era-2026);">Handle ambiguity</h3>
+        <p class="text-muted" style="font-size:0.75em;">Judgment, context, and nuance that agents cannot resolve on their own</p>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- PUNCHLINE -->
+<!-- ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <!-- S11: THE SIDE-BY-SIDE -->
+  <section>
+    <h2 style="font-size:1.3em; text-align:center; margin-bottom:0.6em;">Same task across every era</h2>
+    <p class="text-center text-muted" style="font-size:0.75em; margin-bottom:1em;">📌 "Build a login system"</p>
+    <div class="era-compare">
+      <div class="era-col c2005">
+        <div class="era-col-title">🟦 2005 Developer</div>
+        <ul>
+          <li>Write authentication logic manually</li>
+          <li>Write SQL queries by hand</li>
+          <li>Handle sessions</li>
+          <li>Hand over to QA</li>
+        </ul>
+        <div class="focus text-muted">Focus: <span class="text-blue">code correctness</span></div>
+      </div>
+      <div class="era-col c2015">
+        <div class="era-col-title">🟩 2015 Developer</div>
+        <ul>
+          <li>Build API + frontend</li>
+          <li>Set up CI/CD pipeline</li>
+          <li>Deploy to cloud</li>
+          <li>Handle configs</li>
+        </ul>
+        <div class="focus text-muted">Focus: <span class="text-green">delivery + deployment</span></div>
+      </div>
+      <div class="era-col c2020">
+        <div class="era-col-title">🟨 2020 Developer</div>
+        <ul>
+          <li>Add observability</li>
+          <li>Define SLIs / SLOs</li>
+          <li>Handle scaling + failures</li>
+          <li>Participate in on-call</li>
+        </ul>
+        <div class="focus text-muted">Focus: <span class="text-amber">reliability + production</span></div>
+      </div>
+      <div class="era-col c2026">
+        <div class="era-col-title">🟥 2026 Developer</div>
+        <ul>
+          <li>Describe requirement in natural language</li>
+          <li>Copilot generates code + tests + architecture</li>
+          <li>Review the PR created by agent</li>
+          <li>Validate edge cases + security</li>
+          <li>Tune system design</li>
+        </ul>
+        <div class="focus text-muted">Focus: <span class="text-red">intent + validation + system thinking</span></div>
+      </div>
+    </div>
+    <aside class="notes">
+      Pause here. Let the contrast land. The task is identical - a login system. What completely changed is WHO does WHAT and at what level of abstraction. This is the core insight of the whole presentation.
+    </aside>
+  </section>
+
+  <!-- S12: WHAT ACTUALLY SHIFTED -->
+  <section>
+    <h2>What actually shifted at each stage</h2>
+    <table class="shift-table mt-2">
+      <thead>
+        <tr>
+          <th>Era</th>
+          <th>Primary Skill</th>
+          <th>Core Value</th>
+          <th>The developer's identity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="era-badge era-2005" style="font-size:0.75em;">2005</span></td>
+          <td class="text-blue">Coding</td>
+          <td>Implementation</td>
+          <td class="text-muted">Person who writes code</td>
+        </tr>
+        <tr>
+          <td><span class="era-badge era-2015" style="font-size:0.75em;">2015</span></td>
+          <td class="text-green">DevOps</td>
+          <td>Delivery</td>
+          <td class="text-muted">Person who ships software</td>
+        </tr>
+        <tr>
+          <td><span class="era-badge era-2020" style="font-size:0.75em;">2020</span></td>
+          <td class="text-amber">SRE</td>
+          <td>Reliability</td>
+          <td class="text-muted">Person who owns production</td>
+        </tr>
+        <tr>
+          <td><span class="era-badge era-2026" style="font-size:0.75em;">2026</span></td>
+          <td class="text-red">Agentic</td>
+          <td><span class="bold">Judgment + Orchestration</span></td>
+          <td class="text-muted">Person who ensures the right system is built correctly</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- THE REAL INSIGHT -->
+<!-- ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <!-- S13: THE DEEPEST SHIFT -->
+  <section>
+    <h2>The deepest shift</h2>
+    <div class="before-after mt-2">
+      <div class="before-box">
+        <div class="label">Before</div>
+        <p>"Developer = <strong>person who writes code</strong>"</p>
+      </div>
+      <div class="after-box">
+        <div class="label">Now</div>
+        <p>"Developer = <strong>person who ensures the right system is built correctly</strong>,<br>regardless of who - or what - writes the code"</p>
+      </div>
+    </div>
+    <p class="text-muted text-center fragment mt-2" style="font-size:0.75em;">
+      The accountability, judgment, and ownership haven't moved.<br>
+      The <em>implementation work</em> has been augmented by AI.
+    </p>
+    <aside class="notes">
+      Customer Engagement Strategy: Start by asking how they currently use agents in their software lifecycle. If they use none, introduce GitHub Copilot, which includes agentic features since mid-2025. This reframe - developer as the person who ensures correctness, not the person who types code - is the key mental model shift.
+    </aside>
+  </section>
+
+  <!-- S14: LESS OF -->
+  <section>
+    <h2>What developers do <span class="text-muted">less</span> of now</h2>
+    <div class="grid-2 mt-2">
+      <div class="card fragment" style="border-left: 3px solid var(--gh-border);">
+        <div style="font-size:1.3em; margin-bottom:0.3em; opacity:0.4;">⌨️</div>
+        <h3 class="text-muted" style="font-size:0.9em;">Writing boilerplate</h3>
+        <p class="text-muted" style="font-size:0.75em;">CRUD, scaffolding, repetitive patterns - agents handle this</p>
+      </div>
+      <div class="card fragment" style="border-left: 3px solid var(--gh-border);">
+        <div style="font-size:1.3em; margin-bottom:0.3em; opacity:0.4;">🔁</div>
+        <h3 class="text-muted" style="font-size:0.9em;">Repetitive coding</h3>
+        <p class="text-muted" style="font-size:0.75em;">Copy-paste patterns, similar implementations across services</p>
+      </div>
+      <div class="card fragment" style="border-left: 3px solid var(--gh-border);">
+        <div style="font-size:1.3em; margin-bottom:0.3em; opacity:0.4;">🔦</div>
+        <h3 class="text-muted" style="font-size:0.9em;">Manual debugging of obvious issues</h3>
+        <p class="text-muted" style="font-size:0.75em;">Copilot code review and autofix catches common issues before they land</p>
+      </div>
+      <div class="card fragment" style="border-left: 3px solid var(--gh-border);">
+        <div style="font-size:1.3em; margin-bottom:0.3em; opacity:0.4;">🧪</div>
+        <h3 class="text-muted" style="font-size:0.9em;">Writing basic tests</h3>
+        <p class="text-muted" style="font-size:0.75em;">Unit tests for standard logic generated automatically</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S15: MORE OF -->
+  <section>
+    <h2>What developers do <span class="text-green">more</span> of now</h2>
+    <div class="grid-2 mt-2">
+      <div class="card accent-green fragment">
+        <div style="font-size:1.3em; margin-bottom:0.3em;">🏗️</div>
+        <h3 class="text-green" style="font-size:0.9em;">System design</h3>
+        <p class="text-muted" style="font-size:0.75em;">Architecture, constraints, trade-offs, and long-term thinking</p>
+      </div>
+      <div class="card accent-green fragment">
+        <div style="font-size:1.3em; margin-bottom:0.3em;">🔍</div>
+        <h3 class="text-green" style="font-size:0.9em;">Reviewing AI-generated code</h3>
+        <p class="text-muted" style="font-size:0.75em;">Critical evaluation, catching subtle bugs, security review</p>
+      </div>
+      <div class="card accent-green fragment">
+        <div style="font-size:1.3em; margin-bottom:0.3em;">📋</div>
+        <h3 class="text-green" style="font-size:0.9em;">Defining constraints + guardrails</h3>
+        <p class="text-muted" style="font-size:0.75em;">What the agent can and cannot do; how to scope work correctly</p>
+      </div>
+      <div class="card accent-green fragment">
+        <div style="font-size:1.3em; margin-bottom:0.3em;">🧩</div>
+        <h3 class="text-green" style="font-size:0.9em;">Handling ambiguity</h3>
+        <p class="text-muted" style="font-size:0.75em;">Edge cases, conflicting requirements, judgment calls</p>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- THE MESSAGE -->
+<!-- ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <!-- S16: LEVERAGE -->
+  <section class="center-slide">
+    <h2>This is not "developers are replaced"</h2>
+    <div class="card" style="border-left: 4px solid var(--gh-green); background: rgba(63,185,80,0.07); margin: 1.2em auto; max-width: 700px; text-align:center; padding:1.4em 2em;">
+      <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:0.12em; color:var(--gh-green); margin-bottom:0.6em;">This is</div>
+      <div style="font-size:2.4em; font-weight:800; color:var(--gh-green); line-height:1.1;">Leverage</div>
+    </div>
+    <div class="grid-3 mt-2 fragment">
+      <div class="leverage-stat">
+        <div class="number">3–10×</div>
+        <div class="sublabel">output per developer</div>
+      </div>
+      <div class="leverage-stat">
+        <div class="number">↕️</div>
+        <div class="sublabel">handle broader scope across the lifecycle</div>
+      </div>
+      <div class="leverage-stat">
+        <div class="number">⚡</div>
+        <div class="sublabel">move faster from idea to production</div>
+      </div>
+    </div>
+    <aside class="notes">
+      This is the key reassurance message for developer audiences. The framing: Copilot is the next natural step in the developer journey - not a replacement, but the same evolution that happened when compilers replaced assembly, when IDEs replaced text editors, when cloud replaced on-prem servers. Each shift amplified developers. This is no different.
+    </aside>
+  </section>
+
+  <!-- S17: CLEAN NARRATIVE -->
+  <section>
+    <h2>The narrative in one paragraph</h2>
+    <div class="quote-block mt-2">
+      Over the past 2–3 decades, developers have moved from writing isolated pieces of code, to owning deployment, to ensuring reliability in production, and now to <strong>orchestrating intelligent systems that generate and operate code</strong>.
+      <br><br>
+      The role is no longer about writing code. It is about <strong>defining intent, guiding agents, and ensuring the system behaves correctly at scale</strong>.
+    </div>
+    <div class="grid-2 mt-2" style="gap:0.8em;">
+      <div class="card" style="font-size:0.72em; border-top: 3px solid var(--gh-blue);">
+        <span class="bold text-blue">It shows evolution, not disruption</span>
+        <p class="text-muted mt-1">Developers are levelling up - not being replaced</p>
+      </div>
+      <div class="card" style="font-size:0.72em; border-top: 3px solid var(--gh-green);">
+        <span class="bold text-green">Copilot is the next natural step</span>
+        <p class="text-muted mt-1">The same journey that brought DevOps and SRE practices</p>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============================================================
+     PART 2 - AGENTIC DEVOPS DEFINED
+     ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <!-- S18: BUILD AI WITH AI -->
+  <section class="center-slide">
+    <div class="agentic-badge">Agentic DevOps</div>
+    <h1 class="hero-title">Build AI with AI</h1>
+    <p class="hero-subtitle">Automate, optimize, and accelerate the entire software lifecycle with AI agents</p>
+    <div class="pillar-row">
+      <div class="pillar">
+        Evolve the developer experience<br>
+        <span style="color:var(--gh-muted); font-size:0.9em;">from AI-infused to AI-native</span>
+      </div>
+      <div class="pillar">
+        Extend the value of AI<br>
+        <span style="color:var(--gh-muted); font-size:0.9em;">across the software lifecycle</span>
+      </div>
+      <div class="pillar" style="color:var(--gh-text); font-weight:700;">
+        Accelerate delivery of AI apps and agents<br>
+        <span style="color:var(--gh-blue); font-size:0.9em; font-weight:400;">with AI platform services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- S19: BUILD ON A PLATFORM -->
+  <section>
+    <h2 style="font-size:1.4em;">Build on a platform that takes the<br>complexity out of AI development</h2>
+    <div class="grid-3 mt-2">
+      <div class="platform-card">
+        <div class="icon-circle">→</div>
+        <h4>Accelerate development workflow for AI apps</h4>
+        <p>Build intelligent apps with integrated, intuitive workflows that simplify the complexity of AI development</p>
+      </div>
+      <div class="platform-card" style="border-top: 3px solid var(--gh-purple);">
+        <div class="icon-circle" style="background:linear-gradient(135deg,#bc8cff,#388bfd);">☁️</div>
+        <h4 style="color:var(--gh-purple);">Tailored support for building and deploying apps to Azure</h4>
+        <p>Empower developers to manage Azure deployments with AI context and assistance directly in their IDE</p>
+      </div>
+      <div class="platform-card" style="border-top: 3px solid var(--gh-green);">
+        <div class="icon-circle" style="background:linear-gradient(135deg,#3fb950,#388bfd);">🛡️</div>
+        <h4 style="color:var(--gh-green);">Optimize app security and management</h4>
+        <p>Protect your applications against emerging threats with end-to-end security and monitoring tools</p>
+      </div>
+    </div>
+    <div class="logo-bar" style="font-size:1.4em; margin-top:1.2em;">
+      <span title="GitHub">⚫</span>
+      <span title="VS Code" style="color:#007acc;">🔵</span>
+      <span title="Azure AI Foundry" style="color:#bc8cff;">🔷</span>
+      <span title="Azure" style="color:#388bfd;">☁</span>
+      <span title="Microsoft Defender" style="color:#3fb950;">🛡</span>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============================================================
+     PART 3 - THE GITHUB PLATFORM
+     ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <!-- S20: AI-POWERED DEVELOPER PLATFORM -->
+  <section>
+    <div style="text-align:center; margin-bottom:0.5em;">
+      <div class="text-muted" style="font-size:0.65em; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.3em;">Scale and governance</div>
+      <h2 style="font-size:1.5em;">The AI-Powered Developer Platform</h2>
+    </div>
+    <div class="phases">
+      <div class="phase-card">
+        <div class="phase-title text-blue">📋 Plan</div>
+        <div class="phase-item">Issues</div>
+        <div class="phase-item">Projects</div>
+        <div class="phase-item">Spaces</div>
+        <div class="phase-item">/planning</div>
+        <div class="phase-item">Teams + Slack</div>
+        <div class="phase-item">Boards</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-title text-green">💻 Code</div>
+        <div class="phase-item">Editor/IDEs</div>
+        <div class="phase-item">Copilot CLI</div>
+        <div class="phase-item">/coding</div>
+        <div class="phase-item">Mission control</div>
+        <div class="phase-item">Custom agents</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-title text-amber">✅ Verify</div>
+        <div class="phase-item">Pull Requests</div>
+        <div class="phase-item">/code-review</div>
+        <div class="phase-item">/secure + /auto-fix</div>
+        <div class="phase-item">/testing</div>
+        <div class="phase-item">Code quality</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-title text-red">🚀 Deploy</div>
+        <div class="phase-item">Actions (CI/CD)</div>
+        <div class="phase-item">Releases</div>
+        <div class="phase-item">Apps</div>
+        <div class="phase-item">AI Workflows</div>
+        <div class="phase-item">Custom agents</div>
+        <div class="phase-item">Pipelines</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-title text-purple">⚙️ Operate</div>
+        <div class="phase-item">Metrics/ROI</div>
+        <div class="phase-item">Spark Runtime</div>
+        <div class="phase-item">SRE Agent</div>
+        <div class="phase-item">MCP Integrations</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:1em; font-size:0.65em; color:var(--gh-muted); border: 1px solid var(--gh-border); border-radius: 20px; padding: 0.4em 1.2em; display:inline-block;">
+      🤖 Agent control plane · GitHub · Docker · OpenAI · Anthropic · VS Code · Azure
+    </div>
+    <aside class="notes">
+      GitHub Copilot capabilities: Offers pre-built agents for instant adoption. Can run locally or in GitHub Cloud. Extends beyond coding assistance to a wide range of development tasks - planning, testing, security, deployment, and operations.
+    </aside>
+  </section>
+
+  <!-- S21: GITHUB ENTERPRISE PLATFORM -->
+  <section>
+    <h2>GitHub Enterprise Platform</h2>
+    <div class="ghe-grid" style="margin-top:0.5em;">
+      <div>
+        <div class="ghe-card" style="margin-bottom:0.7em;">
+          <h4 class="text-blue" style="font-size:0.85em;">ℹ️ What is GitHub Enterprise?</h4>
+          <p style="font-size:0.75em;">GitHub Enterprise is the <strong>AI-native developer platform</strong> that unifies code, security, automation, and multi-agent workflows - enabling organizations to modernize software delivery and accelerate innovation with GitHub + Azure.</p>
+          <h4 class="text-blue" style="font-size:0.85em; margin-top:0.8em;">Value of GitHub Enterprise</h4>
+          <p style="font-size:0.75em;">Unlocks agentic capabilities by bringing code, collaboration, security, and automation onto a single AI-powered platform. When repos live in GitHub, agents can work together across the full SDLC: plan → code → build → secure → deploy → operate.</p>
+        </div>
+      </div>
+      <div>
+        <div class="ghe-card">
+          <h4 class="text-purple" style="font-size:0.85em;">❓ Why Now?</h4>
+          <ul style="font-size:0.75em;">
+            <li>Rapid industry shift toward AI-driven development</li>
+            <li>Competitors focus only on IDE-level AI</li>
+            <li>GitHub delivers full-lifecycle AI</li>
+            <li>Customer demand for agent-based workflows is accelerating</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ghe-win-box">
+      <h4>🏆 Here's why we win:</h4>
+      <ul style="font-size:0.82em;">
+        <li><strong>GitHub Enterprise + GitHub Copilot</strong> delivers AI across every SDLC phase. Competitors offer AI at the code stage only, leaving gaps we fill with <strong>end-to-end integration</strong>.</li>
+        <li>We lead with <strong>enterprise-grade security</strong>. GitHub Enterprise is trusted by the world's largest organizations.</li>
+      </ul>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============================================================
+     PART 4 - AGENT HQ
+     ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <!-- S22: AGENT HQ INTRO -->
+  <section>
+    <h2 style="font-size:1.5em;">Scale AI with Confidence<br><span class="text-blue">through Agent HQ</span></h2>
+    <div class="agent-hq-panels" style="margin-top:0.8em;">
+      <div class="agent-hq-panel" style="border-top: 3px solid var(--gh-blue);">
+        <h3 class="text-blue">Developer Mission Control</h3>
+        <ul style="font-size:0.8em;">
+          <li>Jump between tasks - see what's changed</li>
+          <li>Track Copilot's progress in real time</li>
+          <li>Step in with course-corrections as needed</li>
+          <li>View logs, files changed, session progress</li>
+          <li>All in one place</li>
+        </ul>
+        <p class="text-muted mt-1" style="font-size:0.7em;">Jump between tasks, see what's changed, track Copilot's progress, and step in with course-corrections as needed - all in one place.</p>
+      </div>
+      <div class="agent-hq-panel" style="border-top: 3px solid var(--gh-purple);">
+        <h3 class="text-purple">Admin Control Plane</h3>
+        <ul style="font-size:0.8em;">
+          <li>Govern AI - all in one simple place</li>
+          <li>Comprehensive visibility into Copilot adoption</li>
+          <li>Track value and organizational impact</li>
+          <li>Agent policies + audit logs</li>
+          <li>MCP allowlisting</li>
+        </ul>
+        <p class="text-muted mt-1" style="font-size:0.7em;">Govern AI - all in one simple place - and get comprehensive visibility into Copilot adoption value and organizational impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S23: WHAT AGENT HQ MEANS -->
+  <section>
+    <h2>What Agent HQ Means</h2>
+    <div class="card" style="border-left: 4px solid var(--gh-blue); margin-bottom:1em; font-size:0.82em;">
+      A single unified workflow to orchestrate <strong class="text-blue">"any agent, any time, anywhere"</strong> across GitHub and developer tools.
+    </div>
+    <div class="grid-3 mt-1" style="gap:1em;">
+      <div class="card accent-blue fragment" style="font-size:0.75em;">
+        <div style="font-size:1.5em; margin-bottom:0.4em;">🔗</div>
+        <h3 class="text-blue" style="font-size:0.9em;">Context lives where work lives</h3>
+        <p class="text-muted">Agents work where code, issues, PRs, reviews, audit logs and governance already live - no context copying between tools</p>
+      </div>
+      <div class="card accent-purple fragment" style="font-size:0.75em;">
+        <div style="font-size:1.5em; margin-bottom:0.4em;">🚀</div>
+        <h3 class="text-purple" style="font-size:0.9em;">The evolution of Copilot</h3>
+        <p class="text-muted">Pair programmer → Cloud agent → <strong style="color:var(--gh-text);">GitHub as the multi-agent operating layer</strong></p>
+      </div>
+      <div class="card accent-green fragment" style="font-size:0.75em;">
+        <div style="font-size:1.5em; margin-bottom:0.4em;">🏢</div>
+        <h3 class="text-green" style="font-size:0.9em;">Teams delegate, GitHub governs</h3>
+        <p class="text-muted">Developers, PMs and teams delegate work to agents; admins govern agent access, MCP tools, audit logs and policies</p>
+      </div>
+    </div>
+    <div class="card mt-2 fragment" style="font-size:0.72em; border: 1px solid var(--gh-border); text-align:center; padding:0.8em;">
+      Instead of <em style="color:var(--gh-muted);">"Copilot helps me write code in the IDE"</em> →
+      <strong class="text-blue"> Entire teams delegate work to agents, compare outputs, review through normal GitHub workflows</strong>
+    </div>
+  </section>
+
+  <!-- S24: WHERE THINGS STAND -->
+  <section>
+    <h2>Where things stand today</h2>
+    <table class="status-table" style="margin-top:0.6em;">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Copilot Cloud Agent (formerly Coding Agent)</td>
+          <td><span class="badge-ga">GA</span></td>
+          <td>Available for paid Copilot subscribers. Works in background, creates branches, opens draft PRs, requests review.</td>
+        </tr>
+        <tr>
+          <td>Agent HQ Mission Control / Task View</td>
+          <td><span class="badge-ga">GA</span></td>
+          <td>Track logs, files changed, session progress and steer the agent in one place.</td>
+        </tr>
+        <tr>
+          <td>Third-party agents (Claude, Codex)</td>
+          <td><span class="badge-preview">Preview</span></td>
+          <td>Public preview for Copilot Pro+ and Enterprise users across GitHub, Mobile and VS Code.</td>
+        </tr>
+        <tr>
+          <td>Custom agents</td>
+          <td><span class="badge-ga">Available</span></td>
+          <td>Define custom agents via <code style="font-size:0.85em; color:var(--gh-blue);">.github/agents</code> - prompts, tools and MCP server selection.</td>
+        </tr>
+        <tr>
+          <td>Enterprise AI Controls / Agent Control Plane</td>
+          <td><span class="badge-preview">Preview</span></td>
+          <td>Agent policies, activity visibility, audit logs and MCP allowlisting for Enterprise Cloud.</td>
+        </tr>
+        <tr>
+          <td>Copilot CLI</td>
+          <td><span class="badge-ga">GA</span></td>
+          <td>Generally available for all Copilot subscribers. Terminal-native agentic development environment.</td>
+        </tr>
+        <tr>
+          <td>Copilot Memory</td>
+          <td><span class="badge-preview">Preview</span></td>
+          <td>Repository memory that improves cloud agent and code review output.</td>
+        </tr>
+      </tbody>
+    </table>
+    <aside class="notes">
+      Advanced Discussion Points: Expansion beyond coding/testing to design, deployment, release, and operational insights. Tailoring agents for business needs and reusability. Hosting agents for scalability.<br><br>
+      Microsoft's Differentiator: GitHub Enterprise aims to be the "home of the world's agents," differentiating from competitors offering only AI editor tools.
+    </aside>
+  </section>
+
+  <!-- S25: WHY THIS MATTERS -->
+  <section>
+    <h2>Why this matters</h2>
+    <p class="text-muted" style="font-size:0.75em;">The software delivery lifecycle has fundamentally changed</p>
+    <div class="lifecycle-shift mt-2">
+      <div class="lifecycle-old">
+        <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:0.1em; color:var(--gh-muted); margin-bottom:0.8em;">The old way</div>
+        <div class="lifecycle-step">
+          <div class="step-num">1</div>
+          <div>Developer writes code</div>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">2</div>
+          <div>Asks Copilot for help</div>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">3</div>
+          <div>Manually creates PR</div>
+        </div>
+      </div>
+      <div class="lifecycle-arrow">→</div>
+      <div class="lifecycle-new">
+        <div style="font-size:0.7em; text-transform:uppercase; letter-spacing:0.1em; color:var(--gh-green); margin-bottom:0.8em;">The new way</div>
+        <div class="lifecycle-step">
+          <div class="step-num">1</div>
+          <div>Team defines work in Issues / specs</div>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">2</div>
+          <div>Agent researches and proposes implementation</div>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">3</div>
+          <div>Developer reviews, steers, and validates</div>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num">4</div>
+          <div>GitHub captures the full trail - issues, branches, PRs, logs, policies and metrics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ============================================================
+     PART 5 - AGENT USE CASES ACROSS THE SDLC
+     ============================================================ -->
+<section data-background-color="#0d1117">
+  <h2 style="font-size:1.3em; text-align:center; margin-bottom:0.4em;">Agent Use Cases Throughout the SDLC</h2>
+  <table class="sdlc-table">
+    <thead>
+      <tr>
+        <th>Specify</th>
+        <th>Plan</th>
+        <th>Code</th>
+        <th>Test / Verify</th>
+        <th>Deploy</th>
+        <th>Operate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="agent-name">M365 Researcher Agent</div>
+          <div class="use-case">BRD/FRD Creation</div>
+          <div class="prompt-ex">"Create Functional and non-functional specification from teams meeting note/transcript/etc"</div>
+        </td>
+        <td>
+          <div class="agent-name">Chat</div>
+          <div class="use-case">General questions, explore code, refactor</div>
+          <div class="prompt-ex">"Explain auth flow and cookie/session handling"</div>
+        </td>
+        <td>
+          <div class="agent-name">Agent Mode</div>
+          <div class="use-case">Complete complex tasks in IDE with synchronous, multi-file edits, and debugging</div>
+          <div class="prompt-ex">"Update session middleware to use secure, HTTP Only cookies"</div>
+        </td>
+        <td>
+          <div class="agent-name">CLI Agent</div>
+          <div class="use-case">Based on changes in 1 Repo, update another repo either in GitHub or Azure DevOps</div>
+        </td>
+        <td>
+          <div class="agent-name">Agent Mode</div>
+          <div class="use-case">Intricate CD workflows needing synchronous, human-in-the-loop validation in the IDE</div>
+          <div class="prompt-ex">"Add a rollback step if the deployment fails"</div>
+        </td>
+        <td>
+          <div class="agent-name">SRE Agent</div>
+          <div class="use-case">Issues identification and self healing of the issues in Azure</div>
+          <div class="prompt-ex">Defined task with issues</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">M365 Custom Agent</div>
+          <div class="use-case">Create GitHub Issues</div>
+          <div class="prompt-ex">"Based on FR# 123, create a Epic and break it down into GitHub Issues / sub-issues and tasks"</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Agent Mode</div>
+          <div class="use-case">Fetch external context directly from the IDE</div>
+          <div class="prompt-ex">"Get session timeout details from the auth provider's site or MCP server and create a TODO"</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Coding Agent</div>
+          <div class="use-case">Async, well-scoped feature work or fixes (validations, config updates, API protections)</div>
+          <div class="prompt-ex">Defined feature and scope</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Code Review</div>
+          <div class="use-case">Catch common issues (unused imports, style inconsistencies) before human review</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Coding Agent</div>
+          <div class="use-case">Asynchronously troubleshoot deployment errors on release branches</div>
+          <div class="prompt-ex">Defined task with error logs</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">SRE Agent + Coding Agent</div>
+          <div class="use-case">Delegate initial investigation of production bugs or performance issues from SRE agent to GitHub Issues → Coding agent</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Foundry Agent</div>
+          <div class="use-case">Create ADO Work Items and Epics</div>
+          <div class="prompt-ex">"Based on FR# 123, create a Epic and break it down into work items in Azure Board"</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Foundry Agent</div>
+          <div class="use-case">Create ADO Work Items and Epics</div>
+          <div class="prompt-ex">"Based on FR# 123, create a Epic and break it down into work items in Azure Board"</div>
+          <div class="divider"></div>
+          <div class="agent-name">Speckit</div>
+          <div class="use-case">Spec Driven development / writing great spec first</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Agent Mode + Coding Agent</div>
+          <div class="use-case">Combine async drafts with interactive refinement. Coding Agent creates draft of initial feature, then clone and refine with Agent Mode</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Autofix</div>
+          <div class="use-case">Suggest security vulnerability remediations</div>
+          <div class="divider"></div>
+          <div class="agent-name">Pull Request Summaries</div>
+          <div class="use-case">Generate concise summaries of pull requests for easier review</div>
+          <div class="divider"></div>
+          <div class="agent-name">GHAS + Defender</div>
+          <div class="use-case">Vulnerability remediation</div>
+        </td>
+        <td>
+          <div class="divider"></div>
+          <div class="agent-name">Agent Mode + Coding Agent</div>
+          <div class="use-case">Combine async drafts with interactive refinement. Coding Agent creates draft of initial workflow changes, then clone and refine with Agent Mode in IDE</div>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <aside class="notes">
+    Use Cases and Ingredients for Success: Agents add value across most use cases with three essentials: good instructions, access to knowledge, and tools. Over 100k tools/skills available globally but underutilised by many customers.<br><br>
+    Next Steps for Customers: Brainstorm agentic use cases. Help customer skill up on agent development concepts via Microsoft or partners. Introduce Microsoft platforms for hosting agents.<br><br>
+    Business Impact: Increased customer value from existing GitHub Copilot licences.
+  </aside>
+</section>
+
+<!-- ============================================================
+     PART 6 - WRAP UP & BILLING
+     ============================================================ -->
+<section data-background-color="#0d1117">
+
+  <!-- THANK YOU -->
+  <section>
+    <div class="ty-wrap">
+      <div class="ty-logo">&#xf09b;</div>
+      <h1 class="ty-heading">Thank You</h1>
+      <p class="ty-sub">The developer role is evolving - those who leverage AI as a collaborative partner will build the future.</p>
+      <div class="ty-grid">
+        <div class="ty-card">
+          <div class="ty-card-icon">&#128187;</div>
+          <div class="ty-card-label">Try Copilot Agent Mode</div>
+          <div class="ty-card-sub">github.com/features/copilot</div>
+        </div>
+        <div class="ty-card">
+          <div class="ty-card-icon">&#129302;</div>
+          <div class="ty-card-label">Explore Coding Agents</div>
+          <div class="ty-card-sub">Async, parallel, always-on development</div>
+        </div>
+        <div class="ty-card">
+          <div class="ty-card-icon">&#128202;</div>
+          <div class="ty-card-label">Measure the Impact</div>
+          <div class="ty-card-sub">Productivity, quality, cycle time</div>
+        </div>
+        <div class="ty-card">
+          <div class="ty-card-icon">&#128218;</div>
+          <div class="ty-card-label">Build Your Agent Strategy</div>
+          <div class="ty-card-sub">Skill up teams with Agent HQ</div>
+        </div>
+      </div>      
+    </div>
+    <aside class="notes">
+      Close with energy - the shift is real and happening now. Offer to walk through billing details if the customer is interested (press down). Suggested next steps: schedule a Copilot Enterprise trial, identify a pilot team, run an internal Hackathon with Coding Agents.
+    </aside>
+  </section>
+
+  <!-- S27: TOKEN-BASED BILLING (press ↓ from Thank You) -->
+  <section>
+    <h2 style="font-size:1.2em; margin-bottom:0.3em;">GitHub Copilot - Token-based Billing</h2>
+    <div class="billing-grid">
+      <div class="billing-card why-change">
+        <h4>Why this change</h4>
+        <h5>Usage-value alignment</h5>
+        <ul>
+          <li>Customers pay only for what they use</li>
+          <li>Clear visibility into AI consumption and cost drivers</li>
+          <li>Eliminates shelfware and overprovisioning</li>
+        </ul>
+        <h5>Pricing that scales with capability</h5>
+        <ul>
+          <li>More powerful models and agentic workflows consume more compute</li>
+          <li>Flat-rate pricing breaks down as usage and complexity grow</li>
+          <li>Token billing ties price directly to compute consumed</li>
+        </ul>
+        <h5>Industry-standard alignment</h5>
+        <ul>
+          <li>All major AI platforms price on tokens (OpenAI, Anthropic, Google, Cursor)</li>
+          <li>Reduces friction when customers compare or consolidate vendors</li>
+        </ul>
+      </div>
+      <div class="billing-card what-means">
+        <h4>What this means for the customer</h4>
+        <h5>🤝 Pooled entitlements and budgeting controls</h5>
+        <ul>
+          <li>Share usage across teams (heavy + light users)</li>
+          <li>Enterprise and user-level budget controls</li>
+        </ul>
+        <h5>🚀 Access to ongoing innovation</h5>
+        <ul>
+          <li>Pricing scales with models and workflows</li>
+          <li>No upgrades or delays to access new capabilities</li>
+        </ul>
+        <h5>👁 Consumption insight</h5>
+        <ul>
+          <li>Visibility into usage by user and model</li>
+          <li>See actual AI cost using industry standard token rates</li>
+        </ul>
+      </div>
+      <div class="billing-card key-diff">
+        <h4>Key Differences</h4>
+        <div class="diff-cols">
+          <div>
+            <div class="diff-col-title">PRU Model (Current)</div>
+            <ul style="margin-top:0.4em;">
+              <li>Request-based pricing</li>
+              <li>Fixed cost per request</li>
+              <li>No credit sharing</li>
+            </ul>
+          </div>
+          <div>
+            <div class="diff-col-title">AI Credit Model (New)</div>
+            <ul style="margin-top:0.4em;">
+              <li>Token-based pricing</li>
+              <li>Pay for actual usage</li>
+              <li>Shared credit pool</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="billing-card plans">
+        <h4>Plans and Included Value</h4>
+        <table class="plans-table">
+          <thead>
+            <tr><th>Copilot Business</th><th>Copilot Enterprise</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="price">$19 PUPM</div><div class="text-muted" style="font-size:0.8em;">(Same)</div></td>
+              <td><div class="price">$39 PUPM</div><div class="text-muted" style="font-size:0.8em;">(Same)</div></td>
+            </tr>
+            <tr>
+              <td>Includes <span class="token-val">$30</span> in token value<br><span class="text-muted">(3,000 AI credits)</span></td>
+              <td>Includes <span class="token-val">$70</span> in token value<br><span class="text-muted">(7,000 AI credits)</span></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="footnote">AI credits included in Copilot plans are shared across the organization and consumed as tokens are processed.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- S28: TOKENS & BILLING EXPLAINED -->
+  <section>
+    <h2>Tokens &amp; Billing Explained</h2>
+    <p class="text-muted" style="font-size:0.7em; margin-bottom:0.5em;">Tokens are units of AI processing (input, output, and context)</p>
+    <div class="token-cards" style="margin-top:0.6em; margin-bottom:0.7em;">
+      <div class="token-card">
+        <div class="tc-header">
+          <span class="tc-icon">📥</span>
+          <h4>Input Tokens</h4>
+        </div>
+        <div class="tc-accent" style="background: linear-gradient(to right, var(--gh-green), var(--gh-amber));"></div>
+        <ul>
+          <li><em>What you send:</em></li>
+          <li>Prompts and new context</li>
+          <li>Can grow with large files/codebases</li>
+        </ul>
+      </div>
+      <div class="token-card">
+        <div class="tc-header">
+          <span class="tc-icon">📤</span>
+          <h4>Output Tokens</h4>
+        </div>
+        <div class="tc-accent" style="background: linear-gradient(to right, var(--gh-green), var(--gh-amber));"></div>
+        <ul>
+          <li><em>What you get:</em></li>
+          <li>AI-generated responses</li>
+          <li>Typically, the highest compute cost</li>
+        </ul>
+      </div>
+      <div class="token-card">
+        <div class="tc-header">
+          <span class="tc-icon">♻️</span>
+          <h4>Cache Tokens</h4>
+        </div>
+        <div class="tc-accent" style="background: linear-gradient(to right, var(--gh-green), var(--gh-amber));"></div>
+        <ul>
+          <li><em>What's reused:</em></li>
+          <li>Context from previous interactions</li>
+          <li>Improves speed and efficiency</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box">
+      Billable tokens = Input tokens + Output tokens + Cache tokens
+    </div>
+    <div class="meaning-box">
+      <div><span class="meaning-label">What this means:</span></div>
+      <p style="margin-top:0.6em; color:var(--gh-blue); font-weight:500; font-size:0.85em;">
+        Every interaction consumes tokens based on input, output, and context. Larger prompts, longer responses, or more context result in more tokens processed and more credits consumed.
+      </p>
+    </div>
+    <aside class="notes">
+      Next Steps for Customers: Brainstorm agentic use cases with them. Help skill up on agent development concepts via Microsoft or partners. Introduce Microsoft platforms for hosting agents.<br><br>
+      Business Impact: Increased customer value from existing GitHub Copilot licences. Token-based billing aligns incentives - customers get more value as usage grows, and pricing is transparent and auditable.
+    </aside>
+  </section>
+
+</section>
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    controls: true,
+    center: false,
+    transition: 'slide',
+    backgroundTransition: 'fade',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    plugins: [ RevealNotes, RevealHighlight ],
+    keyboard: {
+      // Press 'f' for fullscreen is built-in
+    }
+  });
+</script>
+</body>
+</html>

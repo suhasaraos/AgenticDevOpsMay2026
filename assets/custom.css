@@ -1,0 +1,433 @@
+/* ============================================================
+   GitHub Dark Theme — Agentic DevOps RevealJS Presentation
+   ============================================================ */
+
+/* ---- Root palette ---- */
+:root {
+  --gh-bg:        #0d1117;
+  --gh-surface:   #161b22;
+  --gh-border:    #30363d;
+  --gh-text:      #e6edf3;
+  --gh-muted:     #8b949e;
+  --gh-blue:      #58a6ff;
+  --gh-green:     #3fb950;
+  --gh-amber:     #d29922;
+  --gh-red:       #f85149;
+  --gh-purple:    #bc8cff;
+
+  /* Era colors */
+  --era-2005:     #388bfd;
+  --era-2015:     #3fb950;
+  --era-2020:     #d29922;
+  --era-2026:     #f85149;
+}
+
+/* ---- Base overrides ---- */
+.reveal {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--gh-text);
+  font-size: 36px;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-weight: 700;
+  color: var(--gh-text);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.reveal h1 { font-size: 2.1em; }
+.reveal h2 { font-size: 1.5em; }
+.reveal h3 { font-size: 1.15em; }
+
+.reveal p, .reveal li { font-size: 0.82em; line-height: 1.5; }
+
+.reveal ul { list-style: none; padding-left: 0; }
+.reveal ul li::before { content: "→ "; color: var(--gh-blue); font-weight: 600; }
+
+.reveal a { color: var(--gh-blue); }
+
+/* ---- Centered helper ---- */
+.center-slide { text-align: center !important; }
+.center-slide h1, .center-slide h2, .center-slide h3, .center-slide p { text-align: center; }
+
+/* ============================================================
+   ERA BADGES
+   ============================================================ */
+.era-badge {
+  display: inline-block;
+  padding: 0.15em 0.7em;
+  border-radius: 20px;
+  font-size: 0.62em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.35em;
+}
+.era-2005  { background: rgba(56,139,253,0.18); color: var(--era-2005);  border: 1px solid var(--era-2005); }
+.era-2015  { background: rgba(63,185,80,0.18);  color: var(--era-2015);  border: 1px solid var(--era-2015); }
+.era-2020  { background: rgba(210,153,34,0.18); color: var(--era-2020);  border: 1px solid var(--era-2020); }
+.era-2026  { background: rgba(248,81,73,0.18);  color: var(--era-2026);  border: 1px solid var(--era-2026); }
+
+/* ---- Status badge (GA / Preview) ---- */
+.badge-ga      { background: rgba(63,185,80,0.2);  color: var(--gh-green);  border: 1px solid var(--gh-green);  border-radius: 12px; padding: 0.1em 0.6em; font-size: 0.7em; font-weight: 700; }
+.badge-preview { background: rgba(188,140,255,0.2);color: var(--gh-purple); border: 1px solid var(--gh-purple); border-radius: 12px; padding: 0.1em 0.6em; font-size: 0.7em; font-weight: 700; }
+
+/* ============================================================
+   CARD / PANEL COMPONENTS
+   ============================================================ */
+.card {
+  background: var(--gh-surface);
+  border: 1px solid var(--gh-border);
+  border-radius: 10px;
+  padding: 0.85em 1em;
+}
+
+.card h3 { margin-bottom: 0.4em; }
+
+/* Accent top-border variant */
+.card.accent-blue   { border-top: 3px solid var(--era-2005); }
+.card.accent-green  { border-top: 3px solid var(--era-2015); }
+.card.accent-amber  { border-top: 3px solid var(--era-2020); }
+.card.accent-red    { border-top: 3px solid var(--era-2026); }
+.card.accent-purple { border-top: 3px solid var(--gh-purple); }
+
+/* ============================================================
+   GRID LAYOUTS
+   ============================================================ */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8em; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8em; }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.6em; }
+
+/* ============================================================
+   TIMELINE (S2)
+   ============================================================ */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 1.2em;
+  padding-top: 0.8em;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--era-2005), var(--era-2015), var(--era-2020), var(--era-2026));
+}
+.timeline-node {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding-top: 1em;
+}
+.timeline-node::before {
+  content: "";
+  position: absolute;
+  top: -13px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--gh-bg);
+}
+.timeline-node:nth-child(1)::before { background: var(--era-2005); }
+.timeline-node:nth-child(2)::before { background: var(--era-2015); }
+.timeline-node:nth-child(3)::before { background: var(--era-2020); }
+.timeline-node:nth-child(4)::before { background: var(--era-2026); }
+.timeline-node .year { font-size: 1.3em; font-weight: 700; }
+.timeline-node:nth-child(1) .year { color: var(--era-2005); }
+.timeline-node:nth-child(2) .year { color: var(--era-2015); }
+.timeline-node:nth-child(3) .year { color: var(--era-2020); }
+.timeline-node:nth-child(4) .year { color: var(--era-2026); }
+.timeline-node .label { font-size: 0.7em; color: var(--gh-muted); margin-top: 0.3em; }
+
+/* ============================================================
+   ERA COMPARISON GRID (S11)
+   ============================================================ */
+.era-compare { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.8em; }
+.era-col { border-radius: 10px; padding: 0.75em 0.9em; font-size: 0.68em; }
+.era-col.c2005 { background: rgba(56,139,253,0.08);  border: 1px solid rgba(56,139,253,0.4); }
+.era-col.c2015 { background: rgba(63,185,80,0.08);   border: 1px solid rgba(63,185,80,0.4);  }
+.era-col.c2020 { background: rgba(210,153,34,0.08);  border: 1px solid rgba(210,153,34,0.4); }
+.era-col.c2026 { background: rgba(248,81,73,0.08);   border: 1px solid rgba(248,81,73,0.4);  }
+.era-col .era-col-title { font-weight: 700; font-size: 1.05em; margin-bottom: 0.5em; }
+.era-col.c2005 .era-col-title { color: var(--era-2005); }
+.era-col.c2015 .era-col-title { color: var(--era-2015); }
+.era-col.c2020 .era-col-title { color: var(--era-2020); }
+.era-col.c2026 .era-col-title { color: var(--era-2026); }
+.era-col ul li::before { content: "· "; color: inherit; }
+.era-col .focus { margin-top: 0.8em; font-style: italic; font-size: 0.9em; border-top: 1px solid var(--gh-border); padding-top: 0.5em; }
+
+/* ============================================================
+   SHIFT TABLE (S12)
+   ============================================================ */
+.shift-table { width: 100%; border-collapse: collapse; font-size: 0.75em; }
+.shift-table th { text-align: left; padding: 0.45em 0.8em; background: var(--gh-surface); color: var(--gh-muted); font-weight: 600; border-bottom: 1px solid var(--gh-border); }
+.shift-table td { padding: 0.45em 0.8em; border-bottom: 1px solid var(--gh-border); }
+.shift-table tr:last-child td { border-bottom: none; }
+
+/* ============================================================
+   BEFORE/AFTER (S13)
+   ============================================================ */
+.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-top: 0.7em; }
+.before-box, .after-box { border-radius: 10px; padding: 0.9em 1.1em; text-align: center; }
+.before-box { background: rgba(139,148,158,0.1); border: 1px solid var(--gh-border); }
+.after-box  { background: rgba(63,185,80,0.08);  border: 1px solid var(--gh-green); }
+.before-box .label, .after-box .label { font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 0.5em; }
+.before-box .label { color: var(--gh-muted); }
+.after-box .label  { color: var(--gh-green); }
+.before-box p, .after-box p { font-size: 0.85em; margin: 0; }
+
+/* ============================================================
+   LEVERAGE STATS (S16)
+   ============================================================ */
+.leverage-stat { text-align: center; }
+.leverage-stat .number { font-size: 2.4em; font-weight: 700; color: var(--gh-green); line-height: 1; }
+.leverage-stat .sublabel { font-size: 0.7em; color: var(--gh-muted); }
+
+/* ============================================================
+   QUOTE SLIDE (S17)
+   ============================================================ */
+.quote-block {
+  border-left: 4px solid var(--gh-blue);
+  padding: 1em 1.5em;
+  background: var(--gh-surface);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.9em;
+  line-height: 1.8;
+  color: var(--gh-text);
+  margin-top: 1em;
+}
+
+/* ============================================================
+   AGENTIC DEVOPS HERO (S18)
+   ============================================================ */
+.agentic-badge {
+  display: inline-block;
+  border: 1.5px solid var(--gh-border);
+  border-radius: 20px;
+  padding: 0.3em 1.2em;
+  font-size: 0.65em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gh-muted);
+  margin-bottom: 0.8em;
+}
+
+.hero-title {
+  font-size: 2.3em !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #58a6ff 0%, #bc8cff 50%, #f85149 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1 !important;
+  margin-bottom: 0.3em !important;
+}
+
+.hero-subtitle {
+  font-size: 1em;
+  color: var(--gh-blue);
+  font-weight: 600;
+  margin-bottom: 1.4em;
+}
+
+.pillar-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1.5px solid var(--gh-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.pillar-row .pillar {
+  padding: 1em 1.2em;
+  font-size: 0.75em;
+  color: var(--gh-muted);
+  border-right: 1px solid var(--gh-border);
+  text-align: center;
+}
+.pillar-row .pillar:last-child { border-right: none; color: var(--gh-text); font-weight: 600; }
+
+/* ============================================================
+   PLATFORM CARDS (S19, S20)
+   ============================================================ */
+.platform-card {
+  background: var(--gh-surface);
+  border: 1px solid var(--gh-border);
+  border-radius: 12px;
+  padding: 0.85em;
+  font-size: 0.72em;
+}
+.platform-card .icon-circle {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #388bfd, #bc8cff);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.7em;
+  font-size: 1.2em;
+}
+.platform-card h4 { color: var(--gh-blue); margin-bottom: 0.4em; font-size: 1em; }
+.platform-card p  { color: var(--gh-muted); margin: 0; }
+
+.logo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5em;
+  padding: 0.8em 1.5em;
+  border: 1px solid var(--gh-border);
+  border-radius: 40px;
+  margin-top: 1.2em;
+  font-size: 1.6em;
+}
+
+/* 5-col DevOps phase layout (S20) */
+.phases { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.7em; margin-top: 0.8em; }
+.phase-card {
+  background: var(--gh-surface);
+  border: 1px solid var(--gh-border);
+  border-radius: 10px;
+  padding: 0.6em 0.7em;
+  font-size: 0.6em;
+}
+.phase-card .phase-title { font-weight: 700; font-size: 1.1em; margin-bottom: 0.5em; }
+.phase-card .phase-item  { background: rgba(255,255,255,0.05); border-radius: 5px; padding: 0.2em 0.5em; margin-bottom: 0.3em; color: var(--gh-muted); }
+
+/* ============================================================
+   AGENT HQ (S22-S25)
+   ============================================================ */
+.agent-hq-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4em; }
+.agent-hq-panel { background: var(--gh-surface); border: 1px solid var(--gh-border); border-radius: 12px; padding: 0.85em 1em; }
+.agent-hq-panel h3 { color: var(--gh-text); font-size: 1em; margin-bottom: 0.6em; }
+
+/* Status table (S24) */
+.status-table { width: 100%; border-collapse: collapse; font-size: 0.68em; }
+.status-table th { text-align: left; padding: 0.4em 0.7em; background: var(--gh-surface); color: var(--gh-muted); font-weight: 600; border-bottom: 1px solid var(--gh-border); }
+.status-table td { padding: 0.4em 0.7em; border-bottom: 1px solid var(--gh-border); vertical-align: top; }
+.status-table tr:last-child td { border-bottom: none; }
+.status-table td:first-child { font-weight: 600; color: var(--gh-text); }
+.status-table td:nth-child(3) { color: var(--gh-muted); font-size: 0.9em; }
+
+/* Lifecycle shift (S25) */
+.lifecycle-shift { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1em; align-items: center; }
+.lifecycle-old { background: rgba(139,148,158,0.08); border: 1px solid var(--gh-border); border-radius: 10px; padding: 0.75em 0.9em; }
+.lifecycle-new { background: rgba(63,185,80,0.07); border: 1px solid var(--gh-green); border-radius: 10px; padding: 0.75em 0.9em; }
+.lifecycle-arrow { font-size: 2em; color: var(--gh-blue); text-align: center; }
+.lifecycle-step { display: flex; align-items: flex-start; gap: 0.6em; margin-bottom: 0.6em; font-size: 0.75em; }
+.lifecycle-step .step-num { background: var(--gh-border); border-radius: 50%; width: 1.6em; height: 1.6em; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 0.85em; }
+.lifecycle-new .step-num  { background: rgba(63,185,80,0.2); color: var(--gh-green); }
+
+/* ============================================================
+   SDLC TABLE (S26)
+   ============================================================ */
+.sdlc-table { width: 100%; border-collapse: collapse; font-size: 0.49em; }
+.sdlc-table th { padding: 0.4em 0.5em; text-align: center; font-size: 1.1em; font-weight: 700; border-bottom: 2px solid; }
+.sdlc-table th:nth-child(1) { color: #bc8cff; border-color: #bc8cff; }
+.sdlc-table th:nth-child(2) { color: #388bfd; border-color: #388bfd; }
+.sdlc-table th:nth-child(3) { color: #3fb950; border-color: #3fb950; }
+.sdlc-table th:nth-child(4) { color: #d29922; border-color: #d29922; }
+.sdlc-table th:nth-child(5) { color: #f85149; border-color: #f85149; }
+.sdlc-table th:nth-child(6) { color: #58a6ff; border-color: #58a6ff; }
+.sdlc-table td { padding: 0.4em 0.5em; vertical-align: top; border-right: 1px solid var(--gh-border); }
+.sdlc-table td:last-child { border-right: none; }
+.sdlc-table tr { border-bottom: 1px solid var(--gh-border); }
+.sdlc-table .agent-name { font-weight: 700; color: var(--gh-text); margin-bottom: 0.2em; }
+.sdlc-table .use-case   { color: var(--gh-muted); margin-bottom: 0.2em; }
+.sdlc-table .prompt-ex  { font-style: italic; color: #6e7681; font-size: 0.9em; }
+.sdlc-table .divider    { border-top: 1px dashed var(--gh-border); margin: 0.4em 0; }
+
+/* ============================================================
+   BILLING (S27-S28)
+   ============================================================ */
+.billing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
+.billing-card { background: var(--gh-surface); border: 1px solid var(--gh-border); border-radius: 10px; padding: 0.6em 0.8em; font-size: 0.63em; }
+.billing-card h4 { font-size: 1em; margin-bottom: 0.3em; color: var(--gh-text); border-bottom: 2px solid; padding-bottom: 0.2em; }
+.billing-card.why-change h4 { border-color: var(--gh-blue); }
+.billing-card.what-means h4 { border-color: var(--gh-green); }
+.billing-card.key-diff h4   { border-color: var(--gh-amber); }
+.billing-card.plans h4      { border-color: var(--gh-purple); }
+
+.billing-card h5 { font-size: 0.95em; color: var(--gh-blue); margin: 0.35em 0 0.1em; }
+.billing-card ul li::before { content: "• "; color: var(--gh-muted); }
+.billing-card ul { margin: 0; }
+
+.diff-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; font-size: 0.9em; }
+.diff-col-title { font-weight: 700; font-size: 0.9em; color: var(--gh-muted); margin-bottom: 0.3em; border: 1px solid var(--gh-border); border-radius: 6px; padding: 0.2em 0.6em; display: inline-block; }
+
+.plans-table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+.plans-table th, .plans-table td { padding: 0.4em 0.6em; text-align: center; border: 1px solid var(--gh-border); }
+.plans-table th { background: rgba(255,255,255,0.05); font-weight: 600; }
+.plans-table .price { font-size: 1.2em; font-weight: 700; }
+.plans-table .token-val { color: var(--gh-green); font-weight: 700; }
+.plans-table .footnote { font-size: 0.85em; color: var(--gh-muted); }
+
+/* Token cards (S28) */
+.token-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; margin-bottom: 1em; }
+.token-card { background: var(--gh-surface); border: 1px solid var(--gh-border); border-radius: 10px; padding: 0.75em 0.9em; font-size: 0.72em; }
+.token-card .tc-header { display: flex; align-items: center; gap: 0.6em; margin-bottom: 0.5em; }
+.token-card .tc-icon { font-size: 1.4em; }
+.token-card h4 { margin: 0; font-size: 1em; color: var(--gh-text); }
+.token-card .tc-accent { height: 2px; margin-bottom: 0.5em; border-radius: 2px; }
+.token-card ul li::before { content: "• "; color: var(--gh-muted); }
+
+.formula-box { background: var(--gh-surface); border: 1.5px solid var(--gh-blue); border-radius: 10px; padding: 0.8em 1.2em; text-align: center; font-size: 0.85em; font-weight: 700; color: var(--gh-blue); margin-bottom: 1em; }
+.meaning-box  { background: rgba(63,185,80,0.07); border: 1px solid var(--gh-green); border-radius: 10px; padding: 0.8em 1.2em; font-size: 0.72em; }
+.meaning-box .meaning-label { font-weight: 700; color: var(--gh-green); margin-bottom: 0.3em; display: inline-block; border: 1px solid var(--gh-green); border-radius: 12px; padding: 0.1em 0.8em; font-size: 0.85em; }
+
+/* ============================================================
+   TITLE SLIDE (S1)
+   ============================================================ */
+.title-slide { text-align: center; }
+.title-slide .eyebrow { font-size: 0.65em; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gh-muted); margin-bottom: 0.8em; }
+.title-slide h1 { font-size: 2.2em !important; background: linear-gradient(135deg, #58a6ff, #3fb950); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.title-slide .tagline { color: var(--gh-muted); font-size: 0.8em; margin-top: 1em; }
+
+/* ============================================================
+   GHE PLATFORM SLIDE (S21)
+   ============================================================ */
+.ghe-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 0.9em; margin-top: 0.5em; }
+.ghe-card { background: var(--gh-surface); border: 1px solid var(--gh-border); border-radius: 10px; padding: 0.75em 0.9em; font-size: 0.68em; }
+.ghe-win-box { background: rgba(63,185,80,0.07); border: 1px solid var(--gh-green); border-radius: 10px; padding: 0.7em 0.9em; font-size: 0.68em; margin-top: 0.7em; }
+.ghe-win-box h4 { color: var(--gh-green); margin-bottom: 0.5em; }
+
+/* ============================================================
+   FRAGMENT ANIMATION
+   ============================================================ */
+.reveal .fragment { opacity: 0; transition: opacity 0.3s ease; }
+.reveal .fragment.visible { opacity: 1; }
+
+/* ============================================================
+   UTILITY
+   ============================================================ */
+.text-blue   { color: var(--gh-blue); }
+.text-green  { color: var(--gh-green); }
+.text-amber  { color: var(--gh-amber); }
+.text-red    { color: var(--gh-red); }
+.text-purple { color: var(--gh-purple); }
+.text-muted  { color: var(--gh-muted); }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.35em; }
+.mt-2 { margin-top: 0.7em; }
+.bold { font-weight: 700; }
+
+/* =============================================
+   THANK YOU SLIDE
+   ============================================= */
+.ty-wrap { display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%; justify-content: center; padding: 0 1.5em; }
+.ty-heading { font-size: 2.6em; font-weight: 700; margin: 0 0 0.25em; background: linear-gradient(135deg, var(--gh-blue) 0%, var(--gh-green) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.ty-sub { font-size: 0.75em; color: var(--gh-muted); max-width: 680px; margin: 0 auto 0.9em; line-height: 1.5; }
+.ty-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7em; width: 100%; max-width: 900px; margin-bottom: 0.8em; }
+.ty-card { background: var(--gh-surface); border: 1px solid var(--gh-border); border-radius: 10px; padding: 0.8em 0.6em; }
+.ty-card-icon { font-size: 1.5em; margin-bottom: 0.25em; }
+.ty-card-label { font-size: 0.6em; font-weight: 600; color: var(--gh-text); margin-bottom: 0.2em; }
+.ty-card-sub { font-size: 0.5em; color: var(--gh-muted); line-height: 1.4; }
+.ty-down-hint { font-size: 0.5em; color: var(--gh-border); margin-top: 0.6em; letter-spacing: 0.04em; animation: pulse-hint 2s ease-in-out infinite; }
+@keyframes pulse-hint { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
