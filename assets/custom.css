@@ -431,3 +431,28 @@
 .ty-card-sub { font-size: 0.5em; color: var(--gh-muted); line-height: 1.4; }
 .ty-down-hint { font-size: 0.5em; color: var(--gh-border); margin-top: 0.6em; letter-spacing: 0.04em; animation: pulse-hint 2s ease-in-out infinite; }
 @keyframes pulse-hint { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+/* =============================================
+   GITHUB WATERMARK (all slides)
+   ============================================= */
+.gh-watermark {
+  position: fixed;
+  bottom: 14px;
+  right: 18px;
+  z-index: 9999;
+  opacity: 0.18;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.gh-watermark:hover { opacity: 0.5; }
+.gh-watermark img { width: 36px; height: 36px; filter: invert(1); display: block; }
+
+/* =============================================
+   AI CLOUD LOGO (title slide)
+   ============================================= */
+.title-ai-logo {
+  width: 90px;
+  height: auto;
+  margin: 0.3em auto 0.5em;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(56,139,253,0.5));
+}
