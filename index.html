@@ -26,7 +26,7 @@
   <div class="title-slide">
     <div class="eyebrow">Agentic DevOps · May 2026</div>
     <img src="assets/ai-cloud.svg" class="title-ai-logo" alt="AI" />
-    <h1 id="param-title">The Evolution of the Developer</h1>
+    <h1>The Evolution of the Developer</h1>
     <p class="tagline">From code writer to orchestrator of intelligent systems</p>
     <div style="margin-top:2em; display:flex; justify-content:center; gap:1.5em;">
       <span class="era-badge era-2005">2005</span>
@@ -1202,12 +1202,9 @@
     var author  = p.get('author');
     var company = p.get('company');
 
-    if (title) {
-      document.getElementById('param-title').textContent = decodeURIComponent(title);
-    }
-
     var parts = [];
     if (author)  parts.push('<span class="pm-author">'  + decodeURIComponent(author)  + '</span>');
+    if (title)   parts.push('<span class="pm-title">'   + decodeURIComponent(title)   + '</span>');
     if (company) parts.push('<span class="pm-company">' + decodeURIComponent(company) + '</span>');
     if (parts.length) {
       document.getElementById('param-presenter').innerHTML = parts.join('<span class="pm-sep">·</span>');

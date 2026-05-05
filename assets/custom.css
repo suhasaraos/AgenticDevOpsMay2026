@@ -473,3 +473,5 @@
 .pm-author  { color: var(--gh-text); font-weight: 600; }
 .pm-company { color: var(--gh-blue); }
 .pm-sep     { color: var(--gh-border); }
+
+.pm-title { color: var(--gh-muted); font-style: italic; }
